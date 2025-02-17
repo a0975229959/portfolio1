@@ -1,0 +1,1350 @@
+<style>
+    .course-info-section {
+      background-color: #fff;
+      display: flex;
+      padding-bottom: 94px;
+      flex-direction: column;
+      overflow: hidden;
+      align-items: center;
+    }
+    .top-bar {
+      background-color: #333;
+      align-self: stretch;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 70px;
+    }
+    @media (max-width: 991px) {
+      .top-bar {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+    .top-bar-content {
+      display: flex;
+      width: 100%;
+      max-width: 1170px;
+      align-items: center;
+      gap: 40px 100px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 991px) {
+      .top-bar-content {
+        max-width: 100%;
+      }
+    }
+    .contact-info {
+      align-self: stretch;
+      display: flex;
+      min-width: 240px;
+      align-items: center;
+      gap: 32px;
+      color: #010101;
+      white-space: nowrap;
+      justify-content: start;
+      margin: auto 0;
+      font: 400 16px DM Sans, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .contact-info {
+        white-space: initial;
+      }
+    }
+    .phone-container {
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: start;
+      margin: auto 0;
+    }
+    @media (max-width: 991px) {
+      .phone-container {
+        white-space: initial;
+      }
+    }
+    .phone-icon {
+      aspect-ratio: 0.67;
+      object-fit: contain;
+      object-position: center;
+      width: 16px;
+      align-self: stretch;
+      margin: auto 0;
+    }
+    .phone-number {
+      font-feature-settings: "liga" off, "clig" off;
+      align-self: stretch;
+      margin: auto 0;
+    }
+    .email-container {
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: start;
+      margin: auto 0;
+    }
+    @media (max-width: 991px) {
+      .email-container {
+        white-space: initial;
+      }
+    }
+    .email-icon {
+      aspect-ratio: 1.33;
+      object-fit: contain;
+      object-position: center;
+      width: 24px;
+      align-self: stretch;
+      margin: auto 0;
+    }
+    .email-address {
+      font-feature-settings: "liga" off, "clig" off;
+      align-self: stretch;
+      margin: auto 0;
+    }
+    .social-icons {
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      justify-content: start;
+      margin: auto 0;
+    }
+    .social-icon {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 16px;
+      align-self: stretch;
+      margin: auto 0;
+    }
+    .navigation {
+      display: flex;
+      margin-top: 18px;
+      min-height: 70px;
+      width: 100%;
+      max-width: 1200px;
+      align-items: center;
+      gap: 40px 100px;
+      color: #000;
+      white-space: nowrap;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 991px) {
+      .navigation {
+        max-width: 100%;
+        white-space: initial;
+      }
+    }
+    .logo-container {
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      text-align: center;
+      justify-content: start;
+      width: 85px;
+      margin: auto 0;
+      font: 600 36px/1 Roboto Condensed, -apple-system, Roboto, Helvetica, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .logo-container {
+        white-space: initial;
+      }
+    }
+    .logo {
+      align-self: stretch;
+      height: 30px;
+      width: 85px;
+      gap: 5px;
+      margin: auto 0;
+    }
+    @media (max-width: 991px) {
+      .logo {
+        white-space: initial;
+      }
+    }
+    .nav-links {
+      align-self: stretch;
+      display: flex;
+      min-width: 240px;
+      align-items: center;
+      gap: 15px;
+      letter-spacing: -0.18px;
+      justify-content: start;
+      flex-wrap: wrap;
+      margin: auto 0;
+      font: 500 16px Inter, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .nav-links {
+        max-width: 100%;
+        white-space: initial;
+      }
+    }
+    .nav-item {
+      align-self: stretch;
+      border-radius: 10px;
+      gap: 10px;
+      margin: auto 0;
+      padding: 10px;
+    }
+    @media (max-width: 991px) {
+      .nav-item {
+        white-space: initial;
+      }
+    }
+    .nav-item-active {
+      background-color: #c0c0c0;
+      color: #010101;
+    }
+    .nav-separator {
+      align-self: stretch;
+      width: 0;
+      height: 36px;
+      margin: auto 0;
+      border: 1px solid #000;
+    }
+    .hero-section {
+      background-color: #eee;
+      display: flex;
+      margin-top: 30px;
+      width: 100%;
+      max-width: 1200px;
+      flex-direction: column;
+      padding: 54px 71px 122px;
+    }
+    @media (max-width: 991px) {
+      .hero-section {
+        max-width: 100%;
+        padding: 0 20px 100px;
+      }
+    }
+    .video-placeholder {
+      color: #000;
+      align-self: center;
+      font: 700 40px/1 DM Sans, sans-serif;
+    }
+    .hero-content {
+      margin: 55px 0 -24px;
+    }
+    @media (max-width: 991px) {
+      .hero-content {
+        max-width: 100%;
+        margin: 40px 0 10px;
+      }
+    }
+    .hero-columns {
+      gap: 20px;
+      display: flex;
+    }
+    @media (max-width: 991px) {
+      .hero-columns {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+    }
+    .hero-left-column {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 59%;
+      margin-left: 0;
+    }
+    @media (max-width: 991px) {
+      .hero-left-column {
+        width: 100%;
+      }
+    }
+    .hero-text {
+      display: flex;
+      min-height: 318px;
+      flex-direction: column;
+      font-family: DM Sans, sans-serif;
+      color: #000;
+      justify-content: start;
+    }
+    @media (max-width: 991px) {
+      .hero-text {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    .hero-title {
+      font-feature-settings: "liga" off, "clig" off;
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 80px;
+    }
+    @media (max-width: 991px) {
+      .hero-title {
+        font-size: 40px;
+        line-height: 55px;
+      }
+    }
+    .hero-description {
+      font-feature-settings: "liga" off, "clig" off;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 32px;
+      margin-top: 62px;
+    }
+    @media (max-width: 991px) {
+      .hero-description {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    .hero-right-column {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 41%;
+      margin-left: 20px;
+    }
+    @media (max-width: 991px) {
+      .hero-right-column {
+        width: 100%;
+      }
+    }
+    .contact-form {
+      border-radius: 12px;
+      background-color: #fff;
+      display: flex;
+      min-height: 412px;
+      width: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      color: #010101;
+      white-space: nowrap;
+      justify-content: start;
+      margin: 0 auto;
+      padding: 32px 30px;
+      font: 700 20px/1.6 DM Sans, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .contact-form {
+        margin-top: 40px;
+        white-space: initial;
+        padding: 0 20px;
+      }
+    }
+    .form-title {
+      font-feature-settings: "liga" off, "clig" off;
+      font-size: 24px;
+      line-height: 1;
+    }
+    .form-inputs {
+      display: flex;
+      margin-top: 27px;
+      width: 100%;
+      flex-direction: column;
+      justify-content: start;
+    }
+    @media (max-width: 991px) {
+      .form-inputs {
+        white-space: initial;
+      }
+    }
+    .form-input {
+      align-self: stretch;
+      width: 100%;
+      border-radius: 8px;
+      background-color: #eee;
+      gap: 10px;
+      padding: 10px 12px;
+    }
+    @media (max-width: 991px) {
+      .form-input {
+        white-space: initial;
+      }
+    }
+    .form-input + .form-input {
+      margin-top: 27px;
+    }
+    .form-submit {
+      align-self: stretch;
+      border-radius: 8px;
+      background-color: #c8c8c8;
+      margin-top: 27px;
+      width: 100%;
+      gap: 10px;
+      text-align: center;
+      padding: 10px 0;
+    }
+    @media (max-width: 991px) {
+      .form-submit {
+        white-space: initial;
+      }
+    }
+    .grade-section {
+      display: flex;
+      margin-top: 84px;
+      width: 100%;
+      max-width: 1201px;
+      flex-direction: column;
+      justify-content: start;
+    }
+    @media (max-width: 991px) {
+      .grade-section {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    .grade-title {
+      align-self: start;
+      color: #000;
+      text-align: center;
+      font-feature-settings: "liga" off, "clig" off;
+      font: 700 32px/1 DM Sans, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .grade-title {
+        max-width: 100%;
+      }
+    }
+    .grade-cards {
+      display: flex;
+      margin-top: 41px;
+      width: 100%;
+      align-items: center;
+      gap: 40px 44px;
+      justify-content: start;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 991px) {
+      .grade-cards {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    .grade-card {
+      align-self: stretch;
+      display: flex;
+      min-width: 240px;
+      flex-direction: column;
+      justify-content: start;
+      flex-grow: 1;
+      width: 297px;
+      margin: auto 0;
+    }
+    .grade-card-image {
+      border-radius: 0 0 0 0;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+    }
+    .grade-card-icon-wrapper {
+      border-radius: 7px;
+      background-color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1;
+      padding: 0 30px;
+    }
+    @media (max-width: 991px) {
+      .grade-card-icon-wrapper {
+        padding: 100px 20px;
+      }
+    }
+    .grade-card-icon {
+      aspect-ratio: 1.61;
+      object-fit: contain;
+      object-position: center;
+      width: 58px;
+      margin-bottom: -34px;
+    }
+    @media (max-width: 991px) {
+      .grade-card-icon {
+        margin-bottom: 10px;
+      }
+    }
+    .grade-card-content {
+      display: flex;
+      margin-top: 18px;
+      width: 100%;
+      flex-direction: column;
+      font-family: DM Sans, sans-serif;
+      justify-content: start;
+    }
+    .grade-card-text {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-content: start;
+    }
+    .grade-card-title {
+      color: #000;
+      font-feature-settings: "liga" off, "clig" off;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .grade-card-description {
+      color: #010101;
+      font-feature-settings: "liga" off, "clig" off;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      margin-top: 18px;
+    }
+    .grade-card-link {
+      color: #010101;
+      font-feature-settings: "liga" off, "clig" off;
+      font-size: 16px;
+      font-weight: 400;
+      margin-top: 9px;
+    }
+    .stats-section {
+      background-color: #eee;
+      align-self: stretch;
+      display: flex;
+      margin-top: 119px;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      color: #000;
+      font-weight: 400;
+      white-space: nowrap;
+      line-height: 1;
+      justify-content: center;
+      padding: 82px 70px;
+    }
+    @media (max-width: 991px) {
+      .stats-section {
+        max-width: 100%;
+        margin-top: 40px;
+        white-space: initial;
+        padding: 0 20px;
+      }
+    }
+    .stats-container {
+      display: flex;
+      align-items: center;
+      gap: 40px 80px;
+      justify-content: start;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 991px) {
+      .stats-container {
+        max-width: 100%;
+        white-space: initial;
+      }
+    }
+    .stats-separator {
+      align-self: stretch;
+      width: 0;
+      height: 202px;
+      margin: auto 0;
+      border: 1px solid #888;
+    }
+    .stat-item {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      width: 120px;
+      margin: auto 0;
+    }
+    @media (max-width: 991px) {
+      .stat-item {
+        white-space: initial;
+      }
+    }
+    .stat-number {
+      align-self: center;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      justify-content: center;
+    }
+    @media (max-width: 991px) {
+      .stat-number {
+        white-space: initial;
+      }
+    }
+    .stat-value {
+      align-self: stretch;
+      margin: auto 0;
+      font: 64px DM Serif Display, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .stat-value {
+        font-size: 40px;
+      }
+    }
+    .stat-unit {
+      align-self: stretch;
+      margin: auto 0;
+      font: 24px DM Sans, sans-serif;
+    }
+    .stat-label {
+      margin-top: 30px;
+      font: 24px DM Sans, sans-serif;
+    }
+    .course-info-section {
+      display: flex;
+      margin-top: 105px;
+      width: 100%;
+      max-width: 1200px;
+      flex-direction: column;
+      justify-content: start;
+    }
+    @media (max-width: 991px) {
+      .course-info-section {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    .course-info-container {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-content: start;
+    }
+    @media (max-width: 991px) {
+      .course-info-container {
+        max-width: 100%;
+      }
+    }
+    .course-info-header {
+      align-self: center;
+      display: flex;
+      width: 100%;
+      max-width: 1211px;
+      flex-direction: column;
+      color: #000;
+      white-space: nowrap;
+      justify-content: start;
+    }
+    @media (max-width: 991px) {
+      .course-info-header {
+        max-width: 100%;
+        white-space: initial;
+      }
+    }
+    .course-info-title {
+      text-align: center;
+      font-feature-settings: "liga" off, "clig" off;
+      font: 700 32px/1 DM Sans, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .course-info-title {
+        max-width: 100%;
+      }
+    }
+    .course-info-tabs {
+      align-self: center;
+      display: flex;
+      margin-top: 36px;
+      align-items: center;
+      gap: 15px;
+      letter-spacing: -0.18px;
+      justify-content: start;
+      font: 500 16px Inter, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .course-info-tabs {
+        max-width: 100%;
+        white-space: initial;
+      }
+    }
+    .course-info-tab {
+      align-self: stretch;
+      border-radius: 10px;
+      gap: 10px;
+      margin: auto 0;
+      padding: 10px;
+    }
+    @media (max-width: 991px) {
+      .course-info-tab {
+        white-space: initial;
+      }
+    }
+    .course-info-tab-active {
+      background-color: #c0c0c0;
+      color: #010101;
+    }
+    .course-info-tab-separator {
+      align-self: stretch;
+      width: 0;
+      height: 36px;
+      margin: auto 0;
+      border: 1px solid #000;
+    }
+    .course-cards {
+      display: flex;
+      margin-top: 85px;
+      width: 100%;
+      flex-direction: column;
+      justify-content: start;
+    }
+    @media (max-width: 991px) {
+      .course-cards {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    .course-cards-row {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      gap: 40px 85px;
+      justify-content: start;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 991px) {
+      .course-cards-row {
+        max-width: 100%;
+      }
+    }
+    .course-card {
+      align-self: stretch;
+      display: flex;
+      min-width: 240px;
+      align-items: center;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: auto 0;
+    }
+    @media (max-width: 991px) {
+      .course-card {
+        max-width: 100%;
+      }
+    }
+    .course-card-image {
+      border-radius: 0 0 0 0;
+      align-self: stretch;
+      display: flex;
+      min-width: 240px;
+      flex-direction: column;
+      width: 283px;
+      margin: auto 0;
+    }
+    .course-card-icon-wrapper {
+      border-radius: 7px;
+      background-color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 138px 28px;
+    }
+    @media (max-width: 991px) {
+      .course-card-icon-wrapper {
+        padding: 100px 20px;
+      }
+    }
+    .course-card-icon {
+      aspect-ratio: 1.45;
+      object-fit: contain;
+      object-position: center;
+      width: 42px;
+      margin-bottom: -27px;
+    }
+    @media (max-width: 991px) {
+      .course-card-icon {
+        margin-bottom: 10px;
+      }
+    }
+    .course-card-content {
+      align-self: stretch;
+      display: flex;
+      min-width: 240px;
+      min-height: 271px;
+      padding-bottom: 16px;
+      flex-direction: column;
+      font-family: DM Sans, sans-serif;
+      justify-content: space-between;
+      width: 242px;
+      margin: auto 0;
+    }
+    .course-card-text {
+      display: flex;
+      min-height: 201px;
+      max-width: 100%;
+      width: 242px;
+      flex-direction: column;
+      justify-content: start;
+    }
+    .course-card-title {
+      color: #000;
+      font-feature-settings: "liga" off, "clig" off;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .course-card-description {
+      color: #010101;
+      font-feature-settings: "liga" off, "clig" off;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      margin-top: 18px;
+    }
+    .course-card-link {
+      color: #010101;
+      font-feature-settings: "liga" off, "clig" off;
+      font-size: 16px;
+      font-weight: 400;
+      margin-top: 30px;
+    }
+    .more-news-button {
+      align-self: center;
+      border-radius: 12px;
+      margin-top: 60px;
+      min-height: 56px;
+      width: 169px;
+      max-width: 100%;
+      gap: 10px;
+      color: #010101;
+      white-space: nowrap;
+      padding: 16px 10px;
+      font: 700 24px/1 DM Sans, sans-serif;
+      border: 2px solid #888;
+    }
+    @media (max-width: 991px) {
+      .more-news-button {
+        margin-top: 40px;
+        white-space: initial;
+      }
+    }
+    .activity-section {
+      display: flex;
+      margin-top: 97px;
+      width: 100%;
+      max-width: 1211px;
+      flex-direction: column;
+      color: #000;
+      white-space: nowrap;
+      text-align: center;
+      justify-content: start;
+      font: 700 32px/1 DM Sans, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .activity-section {
+        max-width: 100%;
+        margin-top: 40px;
+        white-space: initial;
+      }
+    }
+    .activity-title {
+      font-feature-settings: "liga" off, "clig" off;
+    }
+    @media (max-width: 991px) {
+      .activity-title {
+        max-width: 100%;
+      }
+    }
+    .activity-image {
+      aspect-ratio: 1.36;
+      object-fit: contain;
+      object-position: center;
+      width: 1170px;
+      border-radius: 0 0 0 0;
+      align-self: center;
+      margin-top: 60px;
+      max-width: 100%;
+    }
+    @media (max-width: 991px) {
+      .activity-image {
+        margin-top: 40px;
+      }
+    }
+    .news-section {
+      margin-top: 128px;
+      width: 100%;
+      max-width: 1170px;
+    }
+    @media (max-width: 991px) {
+      .news-section {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    .news-container {
+      gap: 20px;
+      display: flex;
+    }
+    @media (max-width: 991px) {
+      .news-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+    }
+    .news-main {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 68%;
+      margin-left: 0;
+    }
+    @media (max-width: 991px) {
+      .news-main {
+        width: 100%;
+      }
+    }
+    .news-main-card {
+      border-radius: 7px;
+      background-color: #fff;
+      flex-grow: 1;
+      padding-right: 32px;
+      width: 100%;
+      border: 1px solid #eee;
+    }
+    @media (max-width: 991px) {
+      .news-main-card {
+        max-width: 100%;
+        margin-top: 30px;
+      }
+    }
+    .news-main-content {
+      gap: 20px;
+      display: flex;
+    }
+    @media (max-width: 991px) {
+      .news-main-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+    }
+    .news-main-image {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 66%;
+      margin-left: 0;
+    }
+    @media (max-width: 991px) {
+      .news-main-image {
+        width: 100%;
+      }
+    }
+    .news-main-image-wrapper {
+      border-radius: 7px 0 0 7px;
+      background-color: #eee;
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 270px 80px;
+    }
+    @media (max-width: 991px) {
+      .news-main-image-wrapper {
+        max-width: 100%;
+        margin-top: 30px;
+        padding: 100px 20px;
+      }
+    }
+    .news-main-icon {
+      aspect-ratio: 1.33;
+      object-fit: contain;
+      object-position: center;
+      width: 48px;
+    }
+    .news-main-text {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 34%;
+      margin-left: 20px;
+    }
+    @media (max-width: 991px) {
+      .news-main-text {
+        width: 100%;
+      }
+    }
+    .news-main-text-content {
+      display: flex;
+      margin-top: 138px;
+      flex-direction: column;
+      color: #010101;
+      justify-content: start;
+      font: 400 16px DM Sans, sans-serif;
+    }
+    @media (max-width: 991px) {
+      .news-main-text-content {
+        margin-top: 40px;
+      }
+    }
+    .news-main-title {
+      color: #000;
+      font-feature-settings: "liga" off, "clig" off;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 48px;
+    }
+    .news-main-description {
+      font-feature-settings: "liga" off, "clig" off;
+      line-height: 24px;
+      margin-top: 72px;
+    }
+    @media (max-width: 991px) {
+      .news-main-description {
+        margin-top: 40px;
+      }
+    }
+    .news-main-date {
+      font-feature-settings: "liga" off, "clig" off;
+      margin-top: 72px;
+    }
+    @media (max-width: 991px) {
+      .news-main-date {
+        margin-top: 40px;
+      }
+    }
+    .news-sidebar {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 32%;
+      margin-left: 20px;
+    }
+    @media (max-width: 991px) {
+      .news-sidebar {
+        width: 100%;
+      }
+    }
+    .news-sidebar-content {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+    }
+    @media (max-width: 991px) {
+      .news-sidebar-content {
+        margin-top: 30px;
+      }
+    }
+    .news-sidebar-card {
+      border-radius: 7px;
+      background-color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 118px 74px;
+    }
+    @media (max-width: 991px) {
+      .news-sidebar-card {
+        padding: 100px 20px;
+      }
+    }
+    .news-sidebar-icon {
+      aspect-ratio: 1.33;
+      object-fit: contain;
+      object-position: center;
+      width: 48px;
+      margin-bottom: -24px;
+    }
+    @media (max-width: 991px) {
+      .news-sidebar-icon {
+        margin-bottom: 10px;
+      }
+    }
+    .news-sidebar-card-2 {
+      border-radius: 7px;
+      background-color: #eee;
+      display: flex;
+      margin-top: 32px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 118px 74px;
+    }
+    @media (max-width: 991px) {
+      .news-sidebar-card-2 {
+        padding: 100px 20px;
+      }
+    }
+    .news-sidebar-icon-2 {
+      aspect-ratio: 1.33;
+      object-fit: contain;
+      object-position: center;
+      width: 48px;
+      margin-bottom: -24px;
+    }
+    @media (max-width: 991px) {
+      .news-sidebar-icon-2 {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+  
+  <div class="course-info-section">
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <div class="contact-info">
+          <div class="phone-container">
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4f7ef7add043e75adaaae7cca2ffe4699c0ec35c1b8618ce7e548539a83a079d?placeholderIfAbsent=true&apiKey=7aa6c20d189c42e4a4117438ca10aa44" class="phone-icon" alt="Phone icon" />
+            <div class="phone-number">+1-541-754-3010</div>
+          </div>
+          <div class="email-container">
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/fa15f19a76acbb0c72769f80e23adaf39cf96aa3a124722d16277943f3cba001?placeholderIfAbsent=true&apiKey=7aa6c20d189c42e4a4117438ca10aa44" class="email-icon" alt="Email icon" />
+            <div class="email-address">info@gmail.com</div>
+          </div>
+        </div>
+        <div class="social-icons">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/dc7e683cf8e6df6653199e63dc592a71b4f127fa685b77042cb78e5bd2adf581?placeholderIfAbsent=true&apiKey=7aa6c20d189c42e4a4117438ca10aa44" class="social-icon" alt="Social media icon 1" />
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e7d583c04863ab5c4e6fd57dbe6fe8671fbf5a6cc767b5996ec6397a3370ad76?placeholderIfAbsent=true&apiKey=7aa6c20d189c42e4a4117438ca10aa44" class="social-icon" alt="Social media icon 2" />
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/a4749bd0774ccf4676948fd93d55c20aa648ba7424ef855a73e42a3a46e6e46b?placeholderIfAbsent=true&apiKey=7aa6c20d189c42e4a4117438ca10aa44" class="social-icon" alt="Social media icon 3" />
+        </div>
+      </div>
+    </div>
+    <nav class="navigation">
+      <div class="logo-container">
+        <div class="logo">LOGO</div>
+      </div>
+      <div class="nav-links">
+        <a href="#" class="nav-item nav-item-active">名師親授</a>
+        <div class="nav-separator"></div>
+        <a href="#" class="nav-item">科目內容</a>
+        <div class="nav-separator"></div>
+        <a href="#" class="nav-item">課程主題</a>
+        <div class="nav-separator"></div>
+        <a href="#" class="nav-item">課程時段</a>
+        <div class="nav-separator"></div>
+        <a href="#" class="nav-item">課堂預複習</a>
+        <div class="nav-separator"></div>
+        <a href="#" class="nav-item">會議系統</a>
+      </div>
+    </nav>
+    <section class="hero-section">
+      <div class="video-placeholder">video</div>
+      <div class="hero-content">
+        <div class="hero-columns">
+          <div class="hero-left-column">
+            <div class="hero-text">
+              <h1 class="hero-title">Awesome<br />landing page</h1>
+              <p class="hero-description">Quidam officiis similique sea ei, vel tollit indoctum efficiendi ei, at nihil tantas platonem eos.</p>
+            </div>
+          </div>
+          <div class="hero-right-column">
+            <form class="contact-form">
+              <h2 class="form-title">預約視聽</h2>
+              <div class="form-inputs">
+                <label for="name" class="visually-hidden">姓名</label>
+                <input type="text" id="name" class="form-input" placeholder="姓名" required />
+                <label for="phone" class="visually-hidden">手機</label>
+                <input type="tel" id="phone" class="form-input" placeholder="手機" required />
+                <label for="email" class="visually-hidden">Email</label>
+                <input type="email" id="email" class="form-input" placeholder="Email" required />
+              </div>
+              <button type="submit" class="form-submit">送出</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="grade-section">
+      <h2 class="grade-title">年級分類</h2>
+      <div class="grade-cards">
+        <div class="grade-card">
+          <div class="grade-card-image">
+            <div class="grade-card-icon-wrapper">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/abb99b4983fe0288422be8f04fb508a1964219c15d8dd665dc9439ab507c58a0?placeholderIfAbsent=true&apiKey=7aa6c20d189c42e4a4117438ca10aa44" class="grade-card-icon" alt="Elementary school icon" />
+            </div>
+          </div>
+          <div class="grade-card-content">
+            <div class="grade-card-text">
+              <h3 class="grade-card-title">國小</h3>
+              <p class="grade-card-description">Vix habeo scaevola percipitur ne, qui noster abhorreant ne, mea in dicant eligendi evertitur. Ad falli aliquid menandri his. Usu vocent copiosae ut. No nihil munere eum.</p>
+            </div>
+            <a href="#" class="grade-card-link">VIEW MORE</a>
+          </div>
+        </div>
+        <div class="grade-card">
+          <div class="grade-card-image">
+            <div class="grade-card-icon-wrapper">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/717776726f9489c116c69d1f57e8df60bec137856be70d93403e12a47a0f8d9b?placeholderIfAbsent=true&apiKey=7aa6c20d189c42e4a4117438ca10aa44" class="grade-card-icon" alt="Middle school icon" />
+            </div>
+          </div>
+          <div class="grade-card-content">
+            <div class="grade-card-text">
+              <h3 class="grade-card-title">國中</h3>
+              <p class="grade-card-description">Vix habeo scaevola percipitur ne, qui noster abhorreant ne, mea in dicant eligendi evertitur. Ad falli aliquid menandri his. Usu vocent copiosae ut. No nihil munere eum.</p>
+            </div>
+            <a href="#" class="grade-card-link">VIEW MORE</a>
+          </div>
+        </div>
+        <div class="grade-card">
+          <div class="grade-card-image">
+            <div class="grade-card-icon-wrapper">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/717776726f9489c116c69d1f57e8df60bec137856be70d93403e12a47a0f8d9b?placeholderIfAbsent=true&apiKey=7aa6c20d189c42e4a4117438ca10aa44" class="grade-card-icon" alt="High school icon" />
+            </div>
+          </div>
+          <div class="grade-card-content">
+            <div class="grade-card-text">
+              <h3 class="grade-card-title">高中</h3>
+              <p class="grade-card-description">Vix habeo scaevola percipitur ne, qui noster abhorreant ne, mea in dicant eligendi evertitur. Ad falli aliquid menandri his. Usu vocent copiosae ut. No nihil munere eum.</p>
+            </div>
+            <a href="#" class="grade-card-link">VIEW MORE</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="stats-section">
+      <div class="stats-container">
+        <div class="stats-separator"></div>
+        <div class="stat-item">
+          <div class="stat-number">
+            <span class="stat-value">5</span>
+            <span class="stat-unit">所</span>
+          </div>
+          <div class="stat-label">我們的分校</div>
+        </div>
+        <div class="stats-separator"></div>
+        <div class="stat-item">
+          <div class="stat-number">
+            <span class="stat-value">40</span>
+            <span class="stat-unit">年</span>
+          </div>
+          <div class="stat-label">創立</div>
+        </div>
+        <div class="stats-separator"></div>
+        <div class="stat-item">
+          <div class="stat-number">
+            <span class="stat-value">240</span>
+            <span class="stat-unit">所</span>
+          </div>
+          <div class="stat-label">學生來源(學校)</div>
+        </div>
+        <div class="stats-separator"></div>
+        <div class="stat-item">
+          <div class="stat-number">
+            <span class="stat-value">5</span>
+            <span class="stat-unit">縣市</span>
+          </div>
+          <div class="stat-label">學生分布</div>
+        </div>
+        <div class="stats-separator"></div>
+      </div>
+    </section>
+    <section class="course-info-section">
+      <div class="course-info-container">
+        <div class="course-info-header">
+          <h2 class="course-info-title">課程資訊</h2>
+          <div class="course-info-tabs">
+            <a href="#" class="course-info-tab course-info-tab-active">活動消息</a>
+            <div class="course-info-tab-separator"></div>
+            <a href="#" class="course-info-tab">教學內容</a>
+            <div class="course-info-tab-separator"></div>
+            <a href="#" class="course-info-tab">科目主題</a>
+            <div class="course-info-tab-separator"></div>
+            <a href="#" class="course-info-tab">課表時程</a>
+          </div>
+        </div>
+        <div class="course-cards">
+          <div class="course-cards-row">
+            <div class="course-card">
+              <div class="course-card-image">
+                <div class="course-card-icon-wrapper">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/66d504ef9fba8f5724776cfa829c9759b3e35c884cf6e1c0a81b27bcb1047ba1?placeholderIfAbsent=true&apiKey=7aa6c20d189c42e4a4117438ca10aa44" class="course-card-icon" alt="Weekend class icon" />
+                </div>
+              </div>
+              <div class="course-card-content">
+                <div class="course-card-text">
+                  <h3 class="course-card-title">假日班</h3>
+                  <p class="course-card-description">Vix habeo scaevola percipitur ne, qui noster abhorreant ne, mea in dicant eligendi evertitur. Ad falli aliquid menandri his. Usu vocent copiosae ut. No nihil munere eum.</p>
+                </div>
+                <a href="#" class="course-card-link">VIEW MORE</a>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-card-image">
+                <div class="course-card-icon-wrapper">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/65547b671a01358434e373dca41e15dfccdc8c2efb746e67b098e2e3eac5bb2f?placeholderIfAbsent=true&apiKey=7aa6c20d189c42e4a4117438ca10aa44" class="course-card-icon" alt="Weekend class icon" />
+                </div>
+              </div>
+              <div class="course-card-content">
+                <div class="course-card-text">
+                  <h3 class="course-card-title">假日班</h3>
+                  <p class="course-card-description">Vix habeo scaevola percipitur ne, qui noster abhorreant ne, mea in dicant eligendi evertitur. Ad falli aliquid menandri his. Usu vocent copiosae ut. No nihil munere eum.</p>
+                </div>
+                <a href="#" class="course-card-link">VIEW MORE</a>
+              </div>
+            </div>
+          </div>
+          <div class="course-cards-row">
+            <div class="course-card">
+              <div class="course-card-image">
+                <div class="course-card-icon-wrapper">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/68f0bfea53987fb0eee9d16a295846b665b8281bc6370ae6af2a67cba370c200?placeholderIfAbsent=true&apiKey=7aa6c20d189c42e4a4117438ca10aa44" class="course-card-icon" alt="Intensive class icon" />
+                </div>
+              </div>
+              <div class="course-card-content">
+                <div class="course-card-text">
+                  <h3 class="course-card-title">加強班</h3>
+                  <p class="course-card-description">Vix habeo scaevola percipitur ne, qui noster abhorreant ne, mea in dicant eligendi evertitur. Ad falli aliquid menandri his. Usu vocent copiosae ut. No nihil munere eum.</p>
+                </div>
+                <a href="#" class="course-card-link">VIEW MORE</a>
+              </div>
+            </div>
+            <div class="course-card">
+              <div class="course-card-image">
+                <div class="course-card-icon-wrapper">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d709f1e6b8a011af80dd3d301131ef79b0496fd45bae88151aba37802b22d398?placeholderIfAbsent=true&apiKey=7aa6c20d189c42e4a4117438ca10aa44" class="course-card-icon" alt="Advanced class icon" />
+                </div>
+              </div>
+              <div class="course-card-content">
+                <div class="course-card-text">
+                  <h3 class="course-card-title">資優班</h3>
+                  <p class="course-card-description">Vix habeo scaevola percipitur ne, qui noster abhorreant ne, mea in dicant eligendi evertitur. Ad falli aliquid menandri his. Usu vocent copiosae ut. No nihil munere eum.</p>
+                </div>
+                <a href="#" class="course-card-link">VIEW MORE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="more-news-button">更多消息</a>
+    </section>
+    <section class="activity-section">
+      <h2 class="activity-title">活動圖片</h2>
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/a4597453b49b41e41e7fd295cbf6e18477acadc8c1feb87f1706f81c1cd2d02b?placeholderIfAbsent=true&apiKey=7aa6c20d189c42e4a4117438ca10aa44" class="activity-image" alt="Activity images collage" />
+    </section>
+    <section class="news-section">
+      <div class="news-container">
+        <div class="news-main">
+          <div class="news-main-card">
+            <div class="news-main-content">
+              <div class="news-main-image">
+                <div class="news-main-image-wrapper">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/da4e8536c6d599b07d6fdf47a115463370e0ba8bf994a46237d47d4671c97d27?placeholderIfAbsent=true&apiKey=7aa6c20d189c42e4a4117438ca10aa44" class="news-main-icon" alt="News icon" />
+                </div>
+              </div>
+              <div class="news-main-text">
+                <div class="news-main-text-content">
+                  <h3 class="news-main-title">Future of<br />support</h3>
+                  <p class="news-main-description">Vix habeo scaevola percipitur ne, qui noster abhorreant ne, mea in dicant eligendi evertitur. Ad falli aliquid menandri his. Usu vocent copiosae ut. No nihil munere eum.</p>
+                  <p class="news-main-date">20 august 2019</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="news-sidebar">
+          <div class="news-sidebar-content">
+            <div class="news-sidebar-card">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/da4e8536c6d599b07d6fdf47a115463370e0ba8bf994a46237d47d4671c97d27?placeholderIfAbsent=true&apiKey=7aa6c20d189c42e4a4117438ca10aa44" class="news-sidebar-icon" alt="News icon" />
+            </div>
+            <div class="news-sidebar-card-2">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/da4e8536c6d599b07d6fdf47a115463370e0ba8bf994a46237d47d4671c97d27?placeholderIfAbsent=true&apiKey=7aa6c20d189c42e4a4117438ca10aa44" class="news-sidebar-icon-2" alt="News icon" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>

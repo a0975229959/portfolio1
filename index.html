@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一頁式網站示範</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="#home">首頁</a>
+            <a href="#about">關於</a>
+            <a href="#services">服務</a>
+            <a href="#portfolio">作品</a>
+            <a href="#contact">聯絡</a>
+        </div>
+    </nav>
+
+    <!-- 首頁區段 -->
+    <section id="home">
+        <h1>歡迎來到我的網站</h1>
+        <p>這是一個使用原生 HTML、CSS 和 JavaScript 製作的一頁式網站</p>
+        <button onclick="loadPosts()">載入最新文章</button>
+        <div class="loading" id="loading"></div>
+        <div id="posts"></div>
+    </section>
+
+    <!-- 關於區段 -->
+    <section id="about">
+        <h2>關於我們</h2>
+        <p>我們是一個充滿創意的團隊，專注於提供最好的服務。</p>
+    </section>
+
+    <!-- 服務區段 -->
+    <section id="services">
+        <h2>我們的服務</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>網頁設計</h3>
+                <p>專業的網頁設計服務，為您打造完美的網站。</p>
+            </div>
+            <div class="service-card">
+                <h3>APP開發</h3>
+                <p>手機應用程式開發，實現您的創意想法。</p>
+            </div>
+            <div class="service-card">
+                <h3>品牌設計</h3>
+                <p>專業的品牌形象設計，提升您的品牌價值。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品區段 -->
+    <section id="portfolio">
+        <h2>作品展示</h2>
+        <div class="portfolio-grid" id="portfolio-grid">
+            <!-- API 載入的作品將會顯示在這裡 -->
+        </div>
+    </section>
+
+    <!-- 聯絡區段 -->
+    <section id="contact">
+        <h2>聯絡我們</h2>
+        <form class="contact-form" id="contact-form">
+            <div class="form-group">
+                <label for="name">姓名</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">電子郵件</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">訊息</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">送出</button>
+        </form>
+    </section>
+
+<script src="./main.js"></script>
+</body>
+</html>
