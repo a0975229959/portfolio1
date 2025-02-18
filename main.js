@@ -1,112 +1,66 @@
-// 平滑捲動
+// 初始化 AOS
+AOS.init({
+  duration: 1000,
+  once: true,
+});
+
+// 導航欄滾動效果
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".navbar");
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
+// 改進的漢堡選單功能
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", function () {
+  this.classList.toggle("open");
+  navLinks.classList.toggle("active");
+});
+
+// 點擊導航連結時關閉選單
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    menuToggle.classList.remove("open");
+    navLinks.classList.remove("active");
+  });
+});
+
+// 更新當前活動連結
+const sections = document.querySelectorAll("section");
+const navItems = document.querySelectorAll(
+  ".nav-links a:not(.nav-contact-button)"
+);
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= sectionTop - 60) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navItems.forEach((item) => {
+    item.classList.remove("active");
+    if (item.getAttribute("href").slice(1) === current) {
+      item.classList.add("active");
+    }
+  });
+});
+
+// 平滑滾動
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollTop;
     document.querySelector(this.getAttribute("href")).scrollIntoView({
       behavior: "smooth",
     });
   });
-});
-
-// 載入文章
-async function loadPosts() {
-  const loading = document.getElementById("loading");
-  const postsDiv = document.getElementById("posts");
-
-  loading.style.display = "block";
-  postsDiv.innerHTML = "";
-
-  try {
-    const response = await fetch(
-      "https://jsonplaceholder.typicode.com/posts?_limit=3"
-    );
-    const posts = await response.json();
-
-    posts.forEach((post) => {
-      const postElement = document.createElement("div");
-      postElement.style.margin = "20px";
-      postElement.style.padding = "20px";
-      postElement.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
-      postElement.style.borderRadius = "8px";
-      postElement.innerHTML = `
-                        <h3>${post.title}</h3>
-                        <p>${post.body}</p>
-                    `;
-      postsDiv.appendChild(postElement);
-    });
-  } catch (error) {
-    console.error("Error:", error);
-    postsDiv.innerHTML = "<p>載入失敗，請稍後再試</p>";
-  } finally {
-    loading.style.display = "none";
-  }
-}
-
-// 載入作品集
-async function loadPortfolio() {
-  const portfolioGrid = document.getElementById("portfolio-grid");
-
-  try {
-    const response = await fetch(
-      "https://jsonplaceholder.typicode.com/photos?_limit=6"
-    );
-    const photos = await response.json();
-
-    photos.forEach((photo) => {
-      const portfolioItem = document.createElement("div");
-      portfolioItem.className = "portfolio-item";
-      portfolioItem.innerHTML = `
-                        <img src="/api/placeholder/400/320" alt="${photo.title}">
-                        <div class="portfolio-content">
-                            <h3>${photo.title}</h3>
-                        </div>
-                    `;
-      portfolioGrid.appendChild(portfolioItem);
-    });
-  } catch (error) {
-    console.error("Error:", error);
-    portfolioGrid.innerHTML = "<p>載入失敗，請稍後再試</p>";
-  }
-}
-
-// 表單提交
-document
-  .getElementById("contact-form")
-  .addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const formData = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value,
-    };
-
-    try {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/posts",
-        {
-          method: "POST",
-          body: JSON.stringify(formData),
-          headers: {
-            "Content-type": "application/json",
-          },
-        }
-      );
-
-      if (response.ok) {
-        alert("訊息已送出！");
-        e.target.reset();
-      } else {
-        throw new Error("送出失敗");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("送出失敗，請稍後再試");
-    }
-  });
-
-// 頁面載入時執行
-window.addEventListener("load", () => {
-  loadPortfolio();
 });

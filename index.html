@@ -1,85 +1,717 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>一頁式網站示範</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RWD 網站</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
     <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <!-- 導航欄 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <!-- <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      /* 導航欄樣式 */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 1.2rem;
+        z-index: 1000;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar.scrolled {
+        padding: 0.8rem;
+        background-color: rgba(255, 255, 255, 0.98);
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #2c3e50;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .logo-icon {
+        width: 30px;
+        height: 30px;
+        background-color: #3498db;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1rem;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: #2c3e50;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0.5rem 0;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #3498db;
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #3498db;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .nav-links a.active {
+        color: #3498db;
+      }
+
+      .nav-links a.active::after {
+        width: 100%;
+      }
+
+      .nav-contact-button {
+        background-color: #3498db;
+        color: white !important;
+        padding: 0.8rem 1.5rem !important;
+        border-radius: 25px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .nav-contact-button:hover {
+        background-color: #2980b9;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+      }
+
+      .nav-contact-button::after {
+        display: none;
+      }
+
+      /* 改進的漢堡選單 */
+      .menu-toggle {
+        display: none;
+        cursor: pointer;
+        width: 30px;
+        height: 20px;
+        position: relative;
+        transform: rotate(0deg);
+        transition: 0.5s ease-in-out;
+      }
+
+      .menu-toggle span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: #2c3e50;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out;
+      }
+
+      .menu-toggle span:nth-child(1) {
+        top: 0px;
+      }
+      .menu-toggle span:nth-child(2) {
+        top: 8px;
+      }
+      .menu-toggle span:nth-child(3) {
+        top: 16px;
+      }
+
+      .menu-toggle.open span:nth-child(1) {
+        top: 8px;
+        transform: rotate(135deg);
+      }
+
+      .menu-toggle.open span:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+      }
+
+      .menu-toggle.open span:nth-child(3) {
+        top: 8px;
+        transform: rotate(-135deg);
+      }
+
+      /* Section 樣式 */
+      section {
+        min-height: 100vh;
+        padding: 6rem 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section {
+        background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+        color: white;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        padding: 2rem;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        animation: fadeInUp 1s ease;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: white;
+        color: #1a2a6c;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        margin: 1rem;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      /* 關於我們區塊 */
+      .about-section {
+        background: #f8f9fa;
+        padding: 8rem 2rem;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+      }
+
+      .section-title p {
+        color: #666;
+        font-size: 1.2rem;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .about-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .about-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .about-icon {
+        font-size: 2.5rem;
+        color: #3498db;
+        margin-bottom: 1.5rem;
+      }
+
+      /* 服務區塊 */
+      .services-section {
+        background: #2c3e50;
+        color: white;
+      }
+
+      .services-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .service-card {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .service-card:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.05);
+      }
+
+      .service-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      /* 聯絡我們區塊 */
+      .contact-section {
+        background: #f8f9fa;
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .contact-form {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-top: 0.5rem;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .info-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .info-icon {
+        font-size: 1.5rem;
+        color: #3498db;
+      }
+
+      /* 統計數字區塊 */
+      .stats-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        margin: 4rem auto;
+        max-width: 1200px;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #3498db;
+        margin-bottom: 0.5rem;
+      }
+
+      /* RWD 設定 */
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+          z-index: 1001;
+        }
+
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background-color: rgba(255, 255, 255, 0.98);
+          padding: 6rem 2rem 2rem;
+          gap: 2rem;
+          transition: all 0.3s ease;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .nav-links a {
+          font-size: 1.2rem;
+          text-align: center;
+        }
+
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+
+        .stats-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .stats-container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* 動畫 */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style> -->
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="nav-links">
-            <a href="#home">首頁</a>
-            <a href="#about">關於</a>
-            <a href="#services">服務</a>
-            <a href="#portfolio">作品</a>
-            <a href="#contact">聯絡</a>
+      <div class="nav-container">
+        <a href="#" class="logo">
+          <div class="logo-icon">L</div>
+          LOGO
+        </a>
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+        <div class="nav-links">
+          <a href="#home" class="active">首頁</a>
+          <a href="#about">關於</a>
+          <a href="#services">服務</a>
+          <a href="#contact" class="nav-contact-button">聯絡我們</a>
+        </div>
+      </div>
     </nav>
 
-    <!-- 首頁區段 -->
-    <section id="home">
-        <h1>歡迎來到我的網站</h1>
-        <p>這是一個使用原生 HTML、CSS 和 JavaScript 製作的一頁式網站</p>
-        <button onclick="loadPosts()">載入最新文章</button>
-        <div class="loading" id="loading"></div>
-        <div id="posts"></div>
+    <section id="home" class="hero-section">
+      <div class="hero-content" data-aos="fade-up">
+        <h1 class="hero-title">創新設計，卓越體驗</h1>
+        <p class="hero-subtitle">打造專屬於您的數位解決方案</p>
+        <a href="#contact" class="cta-button">立即聯繫</a>
+        <a href="#services" class="cta-button">了解更多</a>
+      </div>
     </section>
 
-    <!-- 關於區段 -->
-    <section id="about">
+    <section id="about" class="about-section">
+      <div class="section-title" data-aos="fade-up">
         <h2>關於我們</h2>
-        <p>我們是一個充滿創意的團隊，專注於提供最好的服務。</p>
-    </section>
+        <p>致力於提供最優質的服務與解決方案</p>
+      </div>
 
-    <!-- 服務區段 -->
-    <section id="services">
-        <h2>我們的服務</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <h3>網頁設計</h3>
-                <p>專業的網頁設計服務，為您打造完美的網站。</p>
-            </div>
-            <div class="service-card">
-                <h3>APP開發</h3>
-                <p>手機應用程式開發，實現您的創意想法。</p>
-            </div>
-            <div class="service-card">
-                <h3>品牌設計</h3>
-                <p>專業的品牌形象設計，提升您的品牌價值。</p>
-            </div>
+      <div class="stats-container">
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="stat-number">500+</div>
+          <div>完成專案</div>
         </div>
-    </section>
-
-    <!-- 作品區段 -->
-    <section id="portfolio">
-        <h2>作品展示</h2>
-        <div class="portfolio-grid" id="portfolio-grid">
-            <!-- API 載入的作品將會顯示在這裡 -->
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="stat-number">50+</div>
+          <div>專業團隊</div>
         </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="stat-number">98%</div>
+          <div>客戶滿意度</div>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="stat-number">10+</div>
+          <div>年度經驗</div>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="about-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3>創新思維</h3>
+          <p>運用最新技術，創造獨特解決方案</p>
+        </div>
+        <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="about-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>專業團隊</h3>
+          <p>擁有豐富經驗的精英團隊</p>
+        </div>
+        <div class="about-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="about-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3>快速執行</h3>
+          <p>高效率的工作流程，準時交付</p>
+        </div>
+      </div>
     </section>
 
-    <!-- 聯絡區段 -->
-    <section id="contact">
+    <section id="services" class="services-section">
+      <div class="services-container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>我們的服務</h2>
+          <p>提供全方位的數位解決方案</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-icon">
+              <i class="fas fa-desktop"></i>
+            </div>
+            <h3>網站開發</h3>
+            <p>responsive 網站設計<br />電商網站開發<br />企業形象網站</p>
+          </div>
+          <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>行動應用</h3>
+            <p>iOS/Android 開發<br />跨平台解決方案<br />APP 維護更新</p>
+          </div>
+          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <h3>UI/UX 設計</h3>
+            <p>使用者介面設計<br />使用者體驗優化<br />品牌識別設計</p>
+          </div>
+          <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>數位行銷</h3>
+            <p>SEO 優化<br />社群媒體行銷<br />內容策略規劃</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="section-title" data-aos="fade-up">
         <h2>聯絡我們</h2>
-        <form class="contact-form" id="contact-form">
+        <p>我們期待聽到您的聲音</p>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-form" data-aos="fade-right">
+          <h3>發送訊息</h3>
+          <p>請填寫以下表單，我們會盡快回覆您</p>
+
+          <form>
             <div class="form-group">
-                <label for="name">姓名</label>
-                <input type="text" id="name" name="name" required>
+              <label>姓名</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="請輸入您的姓名"
+              />
             </div>
             <div class="form-group">
-                <label for="email">電子郵件</label>
-                <input type="email" id="email" name="email" required>
+              <label>Email</label>
+              <input
+                type="email"
+                class="form-input"
+                placeholder="請輸入您的 Email"
+              />
             </div>
             <div class="form-group">
-                <label for="message">訊息</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+              <label>訊息</label>
+              <textarea
+                class="form-input"
+                rows="5"
+                placeholder="請輸入您的訊息"
+              ></textarea>
             </div>
-            <button type="submit">送出</button>
-        </form>
+            <button type="submit" class="cta-button">送出訊息</button>
+          </form>
+        </div>
+
+        <div class="contact-info" data-aos="fade-left">
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <h3>地址</h3>
+              <p>台北市信義區信義路五段7號</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div>
+              <h3>電話</h3>
+              <p>02-2345-6789</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h3>Email</h3>
+              <p>contact@example.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-<script src="./main.js"></script>
-</body>
+    <!-- <script>
+      // 初始化 AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+
+      // 導航欄滾動效果
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // 改進的漢堡選單功能
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+
+      menuToggle.addEventListener("click", function () {
+        this.classList.toggle("open");
+        navLinks.classList.toggle("active");
+      });
+
+      // 點擊導航連結時關閉選單
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle.classList.remove("open");
+          navLinks.classList.remove("active");
+        });
+      });
+
+      // 更新當前活動連結
+      const sections = document.querySelectorAll("section");
+      const navItems = document.querySelectorAll(
+        ".nav-links a:not(.nav-contact-button)"
+      );
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= sectionTop - 60) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navItems.forEach((item) => {
+          item.classList.remove("active");
+          if (item.getAttribute("href").slice(1) === current) {
+            item.classList.add("active");
+          }
+        });
+      });
+
+      // 平滑滾動
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script> -->
+  <script src="./main.js"></script>
+  </body>
 </html>
